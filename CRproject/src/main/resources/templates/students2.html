@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style type="text/css">
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid black; /* Параметры рамки */
+        }
+        TH {
+            background: #b0e0e6; /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+<div style="height:360px; overflow:auto;">
+    <table id="table" class="table" cellspacing="0" cellpadding="1" border="1">
+        <tr>
+            <th width="10">Stud_id</th>
+            <th width="40">Stud_name</th>
+            <th width="40%" >Enroll_date</th>
+            <th width="10%" >Group_id</th>
+        </tr>
+    </table>
+</div>
+<div>
+    <button class="dropbd" onClick='location.href="/add-student"'>Add student</button>
+    <button id="edit" class="edit">Edit</button>
+    <button id="delete" class="del">Delete</button>
+</div>
+<div>
+    <button class="menu" onClick='location.href="/start"'>Back</button>
+</div>
+</body>
+<script src="/js/students.js"></script>
+</html>

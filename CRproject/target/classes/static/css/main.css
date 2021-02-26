@@ -1,0 +1,62 @@
+.hover{
+    background-color: #18588f;
+}
+.normal{
+    background-color: #ffffff;
+}
+.table{
+    position: relative;
+    left: 42%;
+    transform: translate(-50%, 0);
+}
+.dropbd {
+    background-color: darkgray;
+    border-radius: 15px;
+    margin: 10px;
+    width: 150px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+.edit{
+    background-color: #13792c;
+    border-radius: 15px;
+    margin: 10px;
+    width: 150px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 29%;
+}
+.del{
+    background-color: darkgray;
+    border-radius: 15px;
+    margin: 10px;
+    width: 150px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 59%;
+}
+.menu{
+    background-color: #13792c;
+    border-radius: 15px;
+    margin: 10px;
+    width: 150px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 38%;
+}
