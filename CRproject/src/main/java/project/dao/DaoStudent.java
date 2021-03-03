@@ -10,10 +10,7 @@ import project.model.Student;
 import project.model.StudentDTO;
 import project.repository.StudentRepository;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +32,9 @@ public class DaoStudent implements StudentDAO{
             String name=student.getStud_name();
             Long group_id= student.getGroup_id().getGroup_id();
             String query="insert into students(stud_id, enroll_date, stud_name, group_id)" +
-                    " values("+id+","+"'"+enroll_date+"'"+","+"'"+name+"'"+","+group_id+")";
-            Statement statement = connection.createStatement();
-            statement.executeUpdate(query);
+                    " values(,"+"'"+enroll_date+"'"+","+"'"+name+"'"+","+group_id+")";
+            PreparedStatement statement = connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            statement.executeUpdate();
         }
         catch(SQLException e){}*/
         studentRepository.save(student);
@@ -61,8 +58,8 @@ public class DaoStudent implements StudentDAO{
         String query="select s.stud_id, s.stud_name,s.enroll_date, sg.group_id from students s inner join stud_groups sg on s.group_id = sg.group_id";
         List<StudentDTO> list = new ArrayList<>();
         try{
-            Statement statement = db.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
+            PreparedStatement preparedStatement = db.getConnection().prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
                 list.add(new StudentDTO(
